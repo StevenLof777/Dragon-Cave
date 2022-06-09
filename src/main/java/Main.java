@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
 public class Main {
+    public static Object input(int caveChoice){
+        final String msg = caveChoice == 2
+                ? "The dragon has given you treasure"
+                : "The dragon has eaten you";
+        System.out.println(msg);
+        return msg;
+    };
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println(
                 "You are in a land full of dragons. In front of you, " +
                         "you see two caves. In one cave,\nthe dragon is friendly\n" +
@@ -18,11 +25,6 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-
-        final String msg = caveChoice == 2
-                ? "The dragon has given you treasure"
-                : "The dragon has eaten you";
-
-        System.out.println(msg);
+        input(caveChoice);
     }
 }
